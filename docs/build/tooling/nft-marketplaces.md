@@ -14,9 +14,9 @@ The following NFT marketplaces are specialized in facilitating the trade, creati
 [Element](https://element.market/) is a community-driven aggregated marketplace where you can buy and sell NFTs across different platforms, save money, and earn rewards.\
 **Specialty**: Aggregated Marketplace, Rewards
 
-### Kreatorland
+### Libera
 
-[Kreatorland](https://kreatorland.com/) is a native NFT marketplace built specifically for the zkSync Era.\
+[Libera](https://libera.xyz/) is a native NFT marketplace built specifically for the zkSync Era.\
 **Specialty**: zkSync Era Native
 
 ### OKX NFT
@@ -28,6 +28,11 @@ The following NFT marketplaces are specialized in facilitating the trade, creati
 
 [Tevaera](https://market.tevaera.com/) is the first paymasters and ONFT powered marketplace on the zkSync Era. It offers the lowest transaction fees while being fully secured by the Ethereum consensus.\
 **Specialty**: zkSync Era, Low Fees, Paymasters and ONFT
+
+### zkMarkets
+
+[zkMarkets](https://www.zkmarkets.com/zksync-era) is a native NFT marketplace on zkSync, supporting paymasters and Smart Wallets like Clave. It features a Launchpad, rarity tools, and aggregated listings.
+**Specialty**: Aggregated Marketplace, Paymasters, Smart Accounts, Rarity tools
 
 ### Zonic
 

@@ -34,6 +34,41 @@
       ],
       "redirects": [
         {
+          "source": "/zk-stack/concepts/hyperchains-hyperscaling.html",
+          "destination": "/zk-stack/concepts/zk-chains.html",
+          "type": "301"
+        },
+        {
+          "source": "/zk-stack/running-a-hyperchain/production.html",
+          "destination": "/zk-stack/running-a-zk-chain/production.html",
+          "type": "301"
+        },
+        {
+          "source": "/zk-stack/running-a-hyperchain/locally.html",
+          "destination": "/zk-stack/running-a-zk-chain/locally.html",
+          "type": "301"
+        },
+        {
+          "source": "/zk-stack/running-a-hyperchain/enabling-prover.html",
+          "destination": "/zk-stack/running-a-zk-chain/enabling-prover.html",
+          "type": "301"
+        },
+        {
+          "source": "/zk-stack/running-a-hyperchain/raas.html",
+          "destination": "/zk-stack/running-a-zk-chain/raas.html",
+          "type": "301"
+        },
+        {
+          "source": "/build/tooling/zksync-cli/examples/contract-interaction.html",
+          "destination": "/build/tooling/zksync-cli/commands/contract-interaction.html",
+          "type": "302"
+        },
+        {
+          "source": "/build/tooling/zksync-cli/commands.html",
+          "destination": "/build/tooling/zksync-cli/getting-started.html",
+          "type": "302"
+        },
+        {
           "source": "/docs/dev/developer-guides/contracts/system-contracts.html",
           "destination": "/zk-stack/components/smart-contracts/system-contracts.html",
           "type": "302"
@@ -1035,12 +1070,12 @@
         },
         {
           "source": "/docs/tools/hardhat/plugins.html",
-          "destination": "/build/tooling/hardhat/hardhat-zksync-toolbox.html",
+          "destination": "/build/tooling/hardhat/hardhat-zksync.html",
           "type": "302"
         },
         {
           "source": "/docs/tools/hardhat/plugins.html",
-          "destination": "/build/tooling/hardhat/hardhat-zksync-toolbox.html",
+          "destination": "/build/tooling/hardhat/hardhat-zksync.html",
           "type": "302"
         },
         {
@@ -1140,7 +1175,7 @@
         },
         {
           "source": "/docs/tools/zksync-cli/examples/contract-interaction.html",
-          "destination": "/build/tooling/zksync-cli/examples/contract-interaction.html",
+          "destination": "/build/tooling/zksync-cli/commands/contract-interaction.html",
           "type": "302"
         },
         {
@@ -1243,6 +1278,16 @@
         }
       ],
       "redirects": [
+        {
+          "source": "/build/tooling/zksync-cli/examples/contract-interaction.html",
+          "destination": "/build/tooling/zksync-cli/commands/contract-interaction.html",
+          "type": "302"
+        },
+        {
+          "source": "/build/tooling/zksync-cli/commands.html",
+          "destination": "/build/tooling/zksync-cli/getting-started.html",
+          "type": "302"
+        },
         {
           "source": "/docs/dev/developer-guides/contracts/system-contracts.html",
           "destination": "/zk-stack/components/smart-contracts/system-contracts.html",
@@ -2250,12 +2295,12 @@
         },
         {
           "source": "/docs/tools/hardhat/plugins.html",
-          "destination": "/build/tooling/hardhat/hardhat-zksync-toolbox.html",
+          "destination": "/build/tooling/hardhat/hardhat-zksync.html",
           "type": "302"
         },
         {
           "source": "/docs/tools/hardhat/plugins.html",
-          "destination": "/build/tooling/hardhat/hardhat-zksync-toolbox.html",
+          "destination": "/build/tooling/hardhat/hardhat-zksync.html",
           "type": "302"
         },
         {
@@ -2355,7 +2400,7 @@
         },
         {
           "source": "/docs/tools/zksync-cli/examples/contract-interaction.html",
-          "destination": "/build/tooling/zksync-cli/examples/contract-interaction.html",
+          "destination": "/build/tooling/zksync-cli/commands/contract-interaction.html",
           "type": "302"
         },
         {

@@ -30,6 +30,7 @@ mainchain
 offchain
 processed
 zcli
+zkcli
 blockchains
 sidechain
 sidechains
@@ -65,6 +66,7 @@ Arweave
 Streamr
 dutterbutter
 zeek
+Cyfrin
 
 // Used libraries
 numberish
@@ -126,6 +128,8 @@ Dappradar
 Zetta
 Zetta
 Plonky
+Zeeve
+Chainlink
 
 // NFT Marketplaces
 Kreatorland
@@ -207,6 +211,8 @@ Invb
 REDC
 ECADD
 ECMUL
+raas
+gtlt
 
 
 // Used programming language words
@@ -234,6 +240,7 @@ psql
 jemalloc
 recid
 plux
+pipx
 
 // ETC
 gitter
@@ -308,3 +315,6 @@ Aave
 // testing ci
 Omnibtc
 Owlto
+Gbps
+Gelato
+VRFs

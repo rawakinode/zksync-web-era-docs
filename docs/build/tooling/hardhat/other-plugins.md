@@ -35,9 +35,13 @@ Automatically generate TypeScript bindings for smart contracts.
 
 Plugin used to deploy and update upgradable smart contracts (proxies). Use the [hardhat-zksync-upgradable plugin](./hardhat-zksync-upgradable.md) which provides an easy-to-use interface for interacting with the OpenZeppelin Upgrades Plugins within a Hardhat environment on zkSync.
 
-### hardhat-contract-sizer
+### hardhat-chai-matchers
 
-Generates a report of the bytecode size of the contracts in your project.
+Adds capabilities to make your smart contract tests easy to write and read.
+
+[More information](https://www.npmjs.com/package/@nomicfoundation/hardhat-chai-matchers)
+
+### hardhat-contract-sizer
 
 [More information](https://www.npmjs.com/package/hardhat-contract-sizer)
 
@@ -54,6 +58,18 @@ Although this plugin works out of the box, zkSync Era has a [different fee model
 In addition, make sure to read about [local testing](../../test-and-debug/getting-started.md).
 
 [More information](https://www.npmjs.com/package/hardhat-gas-reporter)
+
+### hardhat-preprocessor
+
+This plugin enables the pre-processing of contract source code prior to compilation.
+
+::: warning CACHE_BREAKER Field Issue
+
+The hardhat-preprocessor plugin adds the CACHE_BREAKER field to the list of libraries, which can lead to failed verification when using [hardhat-zksync-verify](./hardhat-zksync-verify.md) plugin. To prevent this, please include the `--no-compile` flag: `yarn hardhat verify --no-compile `.
+
+:::
+
+[More information](https://www.npmjs.com/package/hardhat-preprocessor)
 
 ## Unsupported plugins
 

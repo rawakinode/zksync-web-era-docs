@@ -20,12 +20,12 @@ zkSync Era has the following official plugins for Hardhat:
 - [@matterlabs/hardhat-zksync-solc](./hardhat-zksync-solc.md) - used to compile contracts written in Solidity.
 - [@matterlabs/hardhat-zksync-vyper](./hardhat-zksync-vyper.md) - used to compile contracts written in Vyper.
 - [@matterlabs/hardhat-zksync-deploy](./hardhat-zksync-deploy.md) - used to deploy smart contracts.
-- [@matterlabs/hardhat-zksync-chai-matchers](./hardhat-zksync-chai-matchers.md) - adds zkSync-specific capabilities to the [Chai](https://www.chaijs.com/) assertion library for testing smart contracts.
 - [@matterlabs/hardhat-zksync-verify](./hardhat-zksync-verify.md) - used to verify smart contracts.
 - [@matterlabs/hardhat-zksync-verify-vyper](./hardhat-zksync-verify-vyper.md) - used to verify vyper smart contracts.
 - [@matterlabs/hardhat-zksync-upgradable](./hardhat-zksync-upgradable.md) - used to deploy, update, and verify proxy smart contracts.
 - [@matterlabs/hardhat-zksync-ethers](./hardhat-zksync-ethers.md) - wrapper around zksync-ethers with some extra Hardhat-specific functionality.
 - [@matterlabs/hardhat-zksync-node](./hardhat-zksync-node.md) - used to run the zkSync era-test-node locally.
+- [@matterlabs/hardhat-zksync](./hardhat-zksync.md) - used to access to all of the supported plugins and to use them as needed in your project.
 
 ::: tip Additional plugins
 Learn more about [other plugins from the community](./other-plugins.md) that you can use with zkSync Era.
@@ -41,7 +41,7 @@ If you are using Vyper, check out the [Vyper plugin documentation](./hardhat-zks
 
 - Make sure your machine satisfies the [system requirements](https://github.com/matter-labs/era-compiler-solidity/tree/main#system-requirements).
 - You have a Node installation and `yarn` or `npm` package manager.
-- You are already familiar with deploying smart contracts on zkSync. If not, please refer to the first section of the
+- You are already familiar with deploying smart contracts on zkSync. If not, please refer to the first section of the [Contract Deployment](../../developer-reference/contract-deployment.md).
 - A wallet with sufficient Sepolia or Göerli `ETH` on Ethereum and zkSync Era Testnet to pay for deploying smart contracts. You can get Sepolia ETH from the [network faucets](../../tooling/network-faucets.md).
   - Get testnet `ETH` for zkSync Era using [bridges](https://zksync.io/explore#bridges) to bridge funds to zkSync.
 - You know how to get your [private key from your MetaMask wallet](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
@@ -235,7 +235,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
   const greeterContract = await deployer.deploy(artifact, [greeting]);
 
-  //obtain the Constructor Arguments
+  // obtain the Constructor Arguments
   console.log("constructor args:" + greeterContract.interface.encodeDeploy([greeting]));
 
   // Show the contract info.

@@ -113,12 +113,8 @@ export const enSidebar = sidebar({
               link: "/build/tutorials/tooling-guides/viem.md",
             },
             {
-              text: "API3",
-              link: "/build/tutorials/tooling-guides/api3.md",
-            },
-            {
-              text: "DIA",
-              link: "/build/tutorials/tooling-guides/dia.md",
+              text: "Web3.js",
+              link: "/build/tutorials/tooling-guides/web3js.md",
             },
             {
               text: "Redstone",
@@ -133,8 +129,8 @@ export const enSidebar = sidebar({
               link: "/build/tutorials/tooling-guides/subquery.md",
             },
             {
-              text: "LayerZero",
-              link: "/build/tutorials/tooling-guides/layerzero.md",
+              text: "DipDup",
+              link: "/build/tutorials/tooling-guides/dipdup.md",
             },
           ],
         },
@@ -178,6 +174,14 @@ export const enSidebar = sidebar({
               text: "Verify Contracts with Hardhat",
               link: "/build/tutorials/how-to/verify-contracts.md"
             },
+            {
+              text: "Deploy Contracts Using Hardhat Plugins",
+              link: "/build/tutorials/how-to/deploy-contract.md"
+            },
+            {
+              text: "Test Contracts with Hardhat",
+              link: "/build/tutorials/how-to/test-contracts.md"
+            },
           ],
         },
       ]
@@ -220,8 +224,44 @@ export const enSidebar = sidebar({
               text: "Getting Started",
               link: "/build/tooling/zksync-cli/getting-started.md",
             },
-            "/build/tooling/zksync-cli/commands.md",
-            "/build/tooling/zksync-cli/examples/contract-interaction.md"
+            {
+              text: "Commands",
+              collapsible: false,
+              children: [
+                {
+                  text: "Start Node Locally",
+                  link: "/build/tooling/zksync-cli/commands/local-node.md",
+                },
+                {
+                  text: "Create a Project",
+                  link: "/build/tooling/zksync-cli/commands/create.md",
+                },
+                {
+                  text: "Contract Interaction",
+                  link: "/build/tooling/zksync-cli/commands/contract-interaction.md",
+                },
+                {
+                  text: "Transaction Info",
+                  link: "/build/tooling/zksync-cli/commands/transaction-info.md",
+                },
+                {
+                  text: "Wallet Functionality",
+                  link: "/build/tooling/zksync-cli/commands/wallet.md",
+                },
+                {
+                  text: "Bridge Operations",
+                  link: "/build/tooling/zksync-cli/commands/bridge.md",
+                },
+                {
+                  text: "Custom Chains",
+                  link: "/build/tooling/zksync-cli/commands/custom-chains.md",
+                },
+              ]
+            },
+            {
+              text: "Troubleshooting",
+              link: "/build/tooling/zksync-cli/troubleshooting.md",
+            },
           ]
         },
         {
@@ -235,11 +275,10 @@ export const enSidebar = sidebar({
             "/build/tooling/hardhat/hardhat-zksync-vyper.md",
             "/build/tooling/hardhat/hardhat-zksync-deploy.md",
             "/build/tooling/hardhat/hardhat-zksync-upgradable.md",
-            "/build/tooling/hardhat/hardhat-zksync-chai-matchers.md",
             "/build/tooling/hardhat/hardhat-zksync-verify.md",
             "/build/tooling/hardhat/hardhat-zksync-verify-vyper.md",
             "/build/tooling/hardhat/hardhat-zksync-ethers.md",
-            "/build/tooling/hardhat/hardhat-zksync-toolbox.md",
+            "/build/tooling/hardhat/hardhat-zksync.md",
             "/build/tooling/hardhat/hardhat-zksync-node.md",
             "/build/tooling/hardhat/other-plugins.md",
           ]
@@ -250,11 +289,11 @@ export const enSidebar = sidebar({
           children: [
             {
               text: "Overview",
-              link: "/build/tooling/foundry/overview.md", 
+              link: "/build/tooling/foundry/overview.md",
             },
             {
               text: "Getting Started",
-              link: "/build/tooling/foundry/getting-started.md", 
+              link: "/build/tooling/foundry/getting-started.md",
             },
           ]
         },
@@ -356,6 +395,7 @@ export const enSidebar = sidebar({
                 "/build/sdks/js/features",
                 "/build/sdks/js/utils",
                 "/build/sdks/js/paymaster-utils",
+                "/build/sdks/js/smart-account-utils",
                 "/build/sdks/js/types",
                 "/build/sdks/js/front-end",
               ],
@@ -372,6 +412,7 @@ export const enSidebar = sidebar({
                 "/build/sdks/js/zksync-ethers/features",
                 "/build/sdks/js/zksync-ethers/utils",
                 "/build/sdks/js/zksync-ethers/paymaster-utils",
+                "/build/sdks/js/zksync-ethers/smart-account-utils",
                 "/build/sdks/js/zksync-ethers/types",
                 "/build/sdks/js/zksync-ethers/front-end",
                 "/build/sdks/js/zksync-ethers/migration"
@@ -388,7 +429,9 @@ export const enSidebar = sidebar({
             "/build/sdks/python/accounts",
             "/build/sdks/python/accounts-l1-l2",
             "/build/sdks/python/contracts",
-            "/build/sdks/python/types"
+            "/build/sdks/python/types",
+            "/build/sdks/python/features",
+            "/build/sdks/python/utils"
           ],
         },
         {
@@ -423,7 +466,12 @@ export const enSidebar = sidebar({
             "/build/sdks/java/getting-started",
             "/build/sdks/java/providers",
             "/build/sdks/java/accounts",
-            "/build/sdks/java/accounts-l1-l2"
+            "/build/sdks/java/accounts-l1-l2",
+            "/build/sdks/java/contracts",
+            "/build/sdks/java/features",
+            "/build/sdks/java/paymaster-utils",
+            "/build/sdks/java/types",
+            "/build/sdks/java/utils"
           ],
         },
         {
@@ -431,9 +479,14 @@ export const enSidebar = sidebar({
           collapsible: true,
           children: [
             "/build/sdks/swift/getting-started",
+            "/build/sdks/swift/clients",
             "/build/sdks/swift/accounts",
             "/build/sdks/swift/accounts-l1-l2",
-            "/build/sdks/swift/paymaster-utils"
+            "/build/sdks/swift/contracts",
+            "/build/sdks/swift/features",
+            "/build/sdks/swift/types",
+            "/build/sdks/swift/paymaster-utils",
+            "/build/sdks/swift/utils"
           ],
         },
         {
@@ -500,6 +553,10 @@ export const enSidebar = sidebar({
       link: "/infra/introduction.md",
     },
     {
+      text: "Quickstart",
+      link: "/infra/quickstart.md",
+    },
+    {
       text: "Component Breakdown",
       link: "/infra/component-breakdown.md",
     },
@@ -554,8 +611,8 @@ export const enSidebar = sidebar({
           link: "/zk-stack/concepts/system-upgrades.md"
         },
         {
-          text: "Hyperchains / Hyperscaling",
-          link: "/zk-stack/concepts/hyperchains-hyperscaling.md"
+          text: "ZK Chains",
+          link: "/zk-stack/concepts/zk-chains.md"
         },
         {
           text: "Data Availability",
@@ -888,17 +945,21 @@ export const enSidebar = sidebar({
       ],
     },
     {
-      text: "Running a Hyperchain",
+      text: "Running a ZK Chain",
       collapsible: true,
       children: [
         {
           text: "Locally",
-          link: "/zk-stack/running-a-hyperchain/locally.md"
+          link: "/zk-stack/running-a-zk-chain/locally.html",
         },
         {
           text: "In Production",
-          link: "/zk-stack/running-a-hyperchain/production.md"
-        }
+          link: "/zk-stack/running-a-zk-chain/production.md"
+        },
+        {
+          text: "Rollup as a Service",
+          link: "/zk-stack/running-a-zk-chain/raas.html",
+        },
       ]
     },
   ],

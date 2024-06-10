@@ -23,7 +23,7 @@ To deploy a contract on Ethereum, a user sends a transaction to the zero address
 
 To deploy a contract on zkSync Era, a user calls the `create` function of the [ContractDeployer system contract](./system-contracts.md#contractdeployer) providing the hash of the contract to be published, as well as the constructor arguments. The contract bytecode itself is supplied in the `factory_deps` field of the transaction (as it's an [EIP712 transaction](../../zk-stack/concepts/transaction-lifecycle.md#eip-712-0x71)). If the contract is a factory (i.e. it can deploy other contracts), these contracts' bytecodes should be included in the `factory_deps` as well.
 
-We recommend using the [hardhat-zksync-deploy](../tooling/hardhat/getting-started.md) plugin, to simplify the deployment process. It provides classes and methods to take care of all the deployment requirements, like generating the [bytecode hash of the contract](#format-of-bytecode-hash).
+We recommend using the [hardhat-zksync-deploy](../tooling/hardhat/getting-started.md) plugin, to simplify the deployment process. It provides classes and methods to take care of all the deployment requirements, like generating the [bytecode hash of the contract](#contract-size-limit-and-format-of-bytecode-hash).
 
 Here's a [step-by-step guide on how to use it](../tooling/hardhat/getting-started.md).
 
@@ -31,7 +31,7 @@ Here's a [step-by-step guide on how to use it](../tooling/hardhat/getting-starte
 
 You might wonder how validators obtain the preimage of the bytecode hashes necessary to execute the code. This is where the concept of factory dependencies, or factory_deps for short, comes into play. Factory dependencies refer to a list of bytecode hashes whose corresponding preimages were previously revealed on the L1 (where data is always available).
 
-Under the hood, zkSync does not store bytecodes of contracts, but [specially formatted hashes of the bytecodes](#format-of-bytecode-hash). You can see that the [ContractDeployer](./system-contracts.md#contractdeployer) system contract accepts the bytecode hash of the deployed contract and not its bytecode. However, for contract deployment to succeed, the operator needs to know the bytecode. The `factory_deps` field of the transaction is used for this reason: it contains the bytecodes that should be known to the operator for this transaction to succeed. Once the transaction succeeds, these bytecodes are published on L1 and are considered "known" to the operator forever.
+Under the hood, zkSync does not store bytecodes of contracts in its state tree, but [specially formatted hashes of the bytecodes](#contract-size-limit-and-format-of-bytecode-hash). You can see that the [ContractDeployer](./system-contracts.md#contractdeployer) system contract accepts the bytecode hash of the deployed contract and not its bytecode. However, for contract deployment to succeed, the operator needs to know the bytecode. The `factory_deps` field of the transaction is used for this reason: it contains the bytecodes that should be known to the operator for this transaction to succeed. Once the transaction succeeds, these bytecodes are published on L1 and are considered "known" to the operator forever.
 
 Some examples of usage are:
 
@@ -44,13 +44,15 @@ Note that the factory deps do not necessarily have to be used by the transaction
 
 For example, let's say that you want to deploy contract `A` which can also deploy contracts `B` and `C`. This means that you will have three factory dependencies for your deployment transaction: `A`,`B` and `C`. If the pubdata required to publish all of them is too large to fit into one block, you can send a dummy transaction with only factory dependencies `A` and `B` (assuming their combined length is small enough) and do the actual deploy with a second transaction while providing the bytecode of contract `C` as a factory dependency for it. Note that if some contract _on its own_ is larger than the allowed limit per block, this contract has to be split into smaller ones.
 
-### Format of bytecode hash
+### Contract size limit and format of bytecode hash
 
 Each zkEVM bytecode must adhere to the following format:
 
 - Its length must be divisible by 32.
 - Its length in words (32-byte chunks) should be odd. In other words, `bytecodeLength % 64 == 32`.
-- It can not be longer than `2^16` 32-byte words, i.e. `2^21` bytes.
+- There is a VM limit, the bytecode can not be more than `2^16` 32-byte words, i.e. `2^21` bytes.
+- The bootloader has a memory limit for supplying pubdata of 450999 bytes, therefore limiting the contract size to it as well. This limit is valid for Validium ZK Chains, that don’t have to publish the bytecode to the base layer.
+- For rollups that must publish the deployed bytecode to the base layer (e.g. Ethereum), there is an additional pubdata limit, which is normally smaller. By default, for each batch, this limit is set to 100000 bytes for ZK Chains using calldata DA, or 120000\*number_of_blobs, for ZK Chains using EIP-4844 blobs.
 
 The 32-byte hash of the bytecode of a zkSync contract is calculated in the following way:
 
@@ -70,6 +72,7 @@ The process of auditing a smart contract should be carried out by experts who ha
 
 For detailed information on smart contract vulnerabilities and security best practices, refer to the following resources:
 
+- [Cyfrin Updraft Security & Auditing Curriculum](https://updraft.cyfrin.io/courses/security).
 - [Consensys smart contract best practices](https://consensys.github.io/smart-contract-best-practices/).
 - [Solidity docs security considerations](https://docs.soliditylang.org/en/latest/security-considerations.html).
 - [Security considerations and best practices on zkSync](../quick-start/best-practices.md)

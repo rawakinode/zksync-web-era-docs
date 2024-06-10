@@ -49,7 +49,6 @@ export default hopeTheme({
       </div>
 
   <p>Made with ❤️ by <a href='https://matter-labs.io/'>Matter Labs</a></p>
-  
   `,
 
   copyright: false,
