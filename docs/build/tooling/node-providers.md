@@ -15,6 +15,12 @@ head:
 
 [Ankr](https://www.ankr.com/rpc/zksync_era/) provides private and public RPC endpoints for zkSync, powered by a globally distributed and decentralized network of nodes. They offer free and [paid plans](https://www.ankr.com/rpc/pricing/) with increased request limits.
 
+### Blast
+[Blast](https://blastapi.io/chains/zksync) custom APIs offer optimized throughput and reduced latency for transactions on Metis and enable access to real-time data, transaction history and network status. 
+
+## Blockdaemon
+[Blockdaemon](https://www.blockdaemon.com/zksync) supports zkSync, a Layer 2 scaling solution for Ethereum that uses zero-knowledge proofs (zk-proofs) to enable scalable, low-cost, and secure transactions on the Ethereum network. It is designed to help overcome the limitations of Ethereum’s scalability and high transaction fees while maintaining a high level of privacy, security, and decentralization.
+
 ### BlockPI
 
 [BlockPI](https://blockpi.io/zksync) is a high-quality, robust, and efficient RPC service network that provides access to zkSync nodes with [free and paid plans](https://docs.blockpi.io/documentations/pricing).
@@ -26,6 +32,9 @@ head:
 ### Chainbase
 
 [Chainbase](https://chainbase.com/chainNetwork/zkSync) API is supercharged for reliability, data correctness, and scalability. Chainbase will handle all the forks, upgrades, and network interruptions
+
+### Chainlist
+[ChainList](https://chainlist.org/chain/324) is a list of EVM networks include zkSync. Users can use the information to connect their wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.
 
 ### DRPC
 
