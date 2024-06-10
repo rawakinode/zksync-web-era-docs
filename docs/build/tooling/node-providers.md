@@ -7,6 +7,9 @@ head:
 
 # RPC Providers
 
+### 1RPC
+[1RPC](https://www.1rpc.io/) is the first and only RPC relay with infrastructure that is fully attested on-chain. Anyone can verify its integrity by assessing the relay's hardware and software components. Now 1RPC support zkSync Mainnet.
+
 ### Alchemy
 
 [Alchemy](https://www.alchemy.com/zksync) is a leading developer platform with powerful APIs, SDKs, and tools to build truly scalable onchain apps. Deploy on zkSync Mainnet and zkSync Sepolia Testnet using Alchemy's free and [paid plans](https://www.alchemy.com/pricing).
